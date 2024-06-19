@@ -1,9 +1,10 @@
 import os
 from github import Github
 from tqdm import tqdm
+from dotenv import load_dotenv
 
-# Set your GitHub token here
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN', 'YOUR TOKEN HERE')
+load_dotenv()  # take environment variables from .env.
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 
 def get_readme_content(repo):
     """
